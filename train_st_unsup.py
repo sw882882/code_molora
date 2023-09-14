@@ -3,8 +3,7 @@ import math
 import nltk
 import pandas as pd
 from datasets import Dataset, DatasetDict, load_dataset
-from sentence_transformers import (InputExample, SentenceTransformer, losses,
-                                   models)
+from sentence_transformers import InputExample, SentenceTransformer, losses, models
 from sentence_transformers.datasets import DenoisingAutoEncoderDataset
 from sentence_transformers.losses import DenoisingAutoEncoderLoss
 from torch.utils.data import DataLoader
@@ -12,7 +11,7 @@ from torch.utils.data import DataLoader
 nltk.download("punkt")
 
 # load data
-df = pd.read_json("./evol-codealpaca-v1/train.jsonl")
+df = pd.read_json("./evol-codealpaca-v1/train.jsonl", lines=True)
 
 dataset = DatasetDict(
     {
