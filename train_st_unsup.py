@@ -66,3 +66,5 @@ model.fit(
 )
 # save model
 model.save("./unsupervised_fine_tune")
+
+model.push_to_hub("bert_code_instruct")
